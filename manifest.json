@@ -1,0 +1,13 @@
+{
+  "name": "PlayCanvas Inspector",
+  "version": "1.0",
+  "description": "Inspect published PlayCanvas applications",
+  "manifest_version": 2,
+  "minimum_chrome_version": "83.0",
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
