@@ -1,0 +1,33 @@
+{
+  "name": "@playcanvas/inspector",
+  "version": "1.0.0",
+  "author": "PlayCanvas <support@playcanvas.com>",
+  "homepage": "https://playcanvas.com",
+  "description": "Chrome extension for inspecting published PlayCanvas apps",
+  "keywords": [
+    "playcanvas",
+    "webgl",
+    "chrome"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/playcanvas/playcanvas-inspector/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playcanvas/playcanvas-inspector.git"
+  },
+  "eslintConfig": {
+    "extends": "@playcanvas/eslint-config",
+    "parserOptions": {
+      "ecmaVersion": 8
+    }
+  }, 
+  "devDependencies": {
+    "@playcanvas/eslint-config": "^1.0.5",
+    "eslint": "^7.1.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}

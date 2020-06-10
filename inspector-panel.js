@@ -25,19 +25,19 @@ chrome.devtools.inspectedWindow.eval(
 );
 
 let code = [
-  'function getComponentStats() {',
-  '    let systems = pc.app.systems.list;',
-  '    let results = [];',
-  '    systems.forEach(system => {',
-  '        results.push({',
-  '            name: system.id,',
-  '            count: pc.app.root.findComponents(system.id).length',
-  '        });',
-  '    });',
-  '    return results;',
-  '}',
-  '',
-  'getComponentStats();'
+    'function getComponentStats() {',
+    '    let systems = pc.app.systems.list;',
+    '    let results = [];',
+    '    systems.forEach(system => {',
+    '        results.push({',
+    '            name: system.id,',
+    '            count: pc.app.root.findComponents(system.id).length',
+    '        });',
+    '    });',
+    '    return results;',
+    '}',
+    '',
+    'getComponentStats();'
 ].join('');
 
 chrome.devtools.inspectedWindow.eval(
@@ -48,9 +48,9 @@ chrome.devtools.inspectedWindow.eval(
         } else {
             result.forEach(component => {
                 if (component.count > 0) {
-                  let componentCount = document.createElement('p');
-                  componentCount.innerText = component.name + ' ' + component.count;
-                  document.body.appendChild(componentCount);
+                    let componentCount = document.createElement('p');
+                    componentCount.innerText = component.name + ' ' + component.count;
+                    document.body.appendChild(componentCount);
                 }
             });
         }
