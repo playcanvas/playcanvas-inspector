@@ -6,6 +6,7 @@
   "minimum_chrome_version": "83.0",
   "devtools_page": "devtools.html",
   "permissions": [
+    "activeTab",
     "tabs",
     "http://*/*",
     "https://*/*"
