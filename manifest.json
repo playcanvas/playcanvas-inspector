@@ -10,5 +10,12 @@
     "tabs",
     "http://*/*",
     "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "playcanvas-devtools/injector.js",
+    "playcanvas-devtools/pc-devtools.js",
+    "playcanvas-devtools/dat.gui.min.js",
+    "playcanvas-devtools/debug-physics.js",
+    "playcanvas-devtools/playcanvas-extras.js"
   ]
 }

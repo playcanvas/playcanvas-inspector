@@ -73,3 +73,29 @@ chrome.devtools.inspectedWindow.eval(
         }
     }
 );
+
+var onDocumentLoaded = function () {
+    // Handler when the DOM is fully loaded
+    var injectorUrl = chrome.runtime.getURL('playcanvas-devtools/injector.js');
+
+    // Getting the base URL so we can inject the other scripts
+    var baseUrl = injectorUrl.replace('injector.js', '');
+
+    // Override the url to load from for the injector script
+    chrome.devtools.inspectedWindow.eval("window.__overrideurl__ = '" + baseUrl + "';");
+    var injectorCode = "(function(){var a=document.createElement('script');a.src='" + injectorUrl + "';document.head.appendChild(a);})();";
+    var addDevtoolsButton = document.getElementById("add-devtools-button");
+    addDevtoolsButton.onclick = function () {
+        chrome.devtools.inspectedWindow.eval(injectorCode);
+        chrome.devtools.inspectedWindow.eval("console.log('Added PlayCanvas Devtools');");
+    };
+};
+
+if (
+    document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+    onDocumentLoaded();
+} else {
+    document.addEventListener("DOMContentLoaded", onDocumentLoaded);
+}
