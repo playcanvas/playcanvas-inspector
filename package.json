@@ -22,10 +22,10 @@
     "parserOptions": {
       "ecmaVersion": 8
     }
-  }, 
+  },
   "devDependencies": {
-    "@playcanvas/eslint-config": "^1.0.5",
-    "eslint": "^7.1.0"
+    "@playcanvas/eslint-config": "^1.0.6",
+    "eslint": "^7.5.0"
   },
   "scripts": {
     "lint": "eslint ."
