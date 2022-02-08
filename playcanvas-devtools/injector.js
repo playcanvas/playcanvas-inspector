@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-use-before-define, block-scoped-var
 if (!__addedDebugTools__) {
     var __addedDebugTools__ = false;
     (function () {
@@ -56,30 +57,46 @@ if (!__addedDebugTools__) {
             };
 
             Object.defineProperty(dummyObj.printGraph, 'enabledNodesOnly', {
-                get: function() { return pcDevtools.graphPrinter.enabledNodesOnly; },
-                set: function(value) { pcDevtools.graphPrinter.enabledNodesOnly = value; }
+                get: function () {
+                    return pcDevtools.graphPrinter.enabledNodesOnly;
+                },
+                set: function (value) {
+                    pcDevtools.graphPrinter.enabledNodesOnly = value;
+                }
             });
 
             Object.defineProperty(dummyObj.printGraph, 'printPaths', {
-                get: function() { return pcDevtools.graphPrinter.showPaths; },
-                set: function(value) { pcDevtools.graphPrinter.showPaths = value; }
+                get: function () {
+                    return pcDevtools.graphPrinter.showPaths;
+                },
+                set: function (value) {
+                    pcDevtools.graphPrinter.showPaths = value;
+                }
             });
 
 
             dummyObj.picker = {};
 
             Object.defineProperty(dummyObj.picker, 'enabled', {
-                get: function() { return pcDevtools.picker.enabled; },
-                set: function(value) { pcDevtools.picker.enabled = value; }
+                get: function () {
+                    return pcDevtools.picker.enabled;
+                },
+                set: function (value) {
+                    pcDevtools.picker.enabled = value;
+                }
             });
 
             Object.defineProperty(dummyObj.picker, 'camera', {
-                get: function() { return pcDevtools.picker.cameraPath; },
-                set: function(value) { pcDevtools.picker.cameraPath = value; }
+                get: function () {
+                    return pcDevtools.picker.cameraPath;
+                },
+                set: function (value) {
+                    pcDevtools.picker.cameraPath = value;
+                }
             });
 
             dummyObj.picker.cameraDropdownController = null;
-            dummyObj.picker.refreshActiveCameras = function() {
+            dummyObj.picker.refreshActiveCameras = function () {
                 if (dummyObj.picker.cameraDropdownController) {
                     entityPickerFolder.remove(dummyObj.picker.cameraDropdownController);
                 }
@@ -136,6 +153,7 @@ if (!__addedDebugTools__) {
             for (var i = 0; i < scriptFilenames.length; ++i) {
                 var imported = document.createElement('script');
                 imported.src = baseUrl + scriptFilenames[i];
+                // eslint-disable-next-line no-loop-func
                 imported.onload = function () {
                     scriptsLoaded += 1;
                     if (scriptsLoaded == scriptFilenames.length) {

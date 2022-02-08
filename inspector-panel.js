@@ -1,5 +1,5 @@
 function createElement(type, parent, innerText) {
-    let el = document.createElement(type);
+    const el = document.createElement(type);
     if (innerText) {
         el.innerText = innerText;
     }
@@ -29,7 +29,7 @@ chrome.devtools.inspectedWindow.eval(
     }
 );
 
-let code = [
+const code = [
     'function getComponentStats() {',
     '    let systems = pc.app.systems.list;',
     '    let results = [];',
@@ -56,13 +56,13 @@ chrome.devtools.inspectedWindow.eval(
         if (isException) {
             console.log("The page is not using PlayCanvas");
         } else {
-            let table = createElement('table', document.body);
+            const table = createElement('table', document.body);
             let row = createElement('tr', table);
             createElement('th', row, 'Component');
             createElement('th', row, 'Enabled');
             createElement('th', row, 'Total');
 
-            result.forEach(system => {
+            result.forEach((system) => {
                 if (system.total > 0) {
                     row = createElement('tr', table);
                     createElement('td', row, system.name);

@@ -40,6 +40,7 @@
 
         var shouldPrint = true;
         if (filterString && filterString.length > 0) {
+            // eslint-disable-next-line no-eval
             shouldPrint = eval(filterString);
         }
 
@@ -73,7 +74,7 @@
     };
 
     pcDevtools.picker = {};
-    pcDevtools.picker.enabled = false
+    pcDevtools.picker.enabled = false;
     pcDevtools.picker.cameraPath = "";
 
     pcDevtools.picker.onSelect = function (x, y) {
